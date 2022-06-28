@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house" id="UxN-QK-k20"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" selectedImage="house.fill" id="UxN-QK-k20"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="BZw-hu-fjy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="기록" image="list.dash" catalog="system" selectedImage="list.triangle" id="eLk-D6-H8T"/>
+                    <tabBarItem key="tabBarItem" title="기록" image="person" catalog="system" selectedImage="person.fill" id="eLk-D6-H8T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmX-zP-aKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,6 +81,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9ik-Pc-uzv"/>
@@ -96,12 +97,16 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
-        <image name="list.triangle" catalog="system" width="128" height="91"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="option" width="24" height="24"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -13,16 +13,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var movieData : MovieData?
     
-    let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=60c9b995596ead85ff6e59a8d3725e72&targetDt=20220628"
+    var movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=60c9b995596ead85ff6e59a8d3725e72&targetDt="
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        movieURL += yesterdayDate()
         self.getData()
     }
     
+    //어제 날짜 구하기
+    func yesterdayDate() -> String {
+        let now = Date()
+        let yesterday = now.addingTimeInterval(3600 * -24)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        let yesterdayData = formatter.string(from: yesterday)
+        
+        return yesterdayData
+    }
+    
+    //JSON 데이터 가져오기
     func getData() {
-        if let url = URL(string: movieURL) {
+        guard let url = URL(string: movieURL) else { return }
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -33,10 +48,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let decoder = JSONDecoder()
                     do {
                         let decodedData = try decoder.decode(MovieData.self, from: JSONdata)
-//                        print(decodedData.boxOfficeResult.dailyBoxOfficeList[0].movieNm)
-//                        print(decodedData.boxOfficeResult.dailyBoxOfficeList[0].rank)
-//                        print(decodedData.boxOfficeResult.dailyBoxOfficeList[0].openDt)
-//                        print(decodedData.boxOfficeResult.dailyBoxOfficeList[0].audiAcc)
                         self.movieData = decodedData
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
@@ -47,9 +58,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
             task.resume()
-        }
     }
     
+    //TableView 관련
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -64,10 +75,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.description)
-    }
-
-
 }
 

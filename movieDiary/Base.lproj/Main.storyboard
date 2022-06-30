@@ -138,18 +138,78 @@
         <!--리뷰-->
         <scene sceneID="tN8-iI-t1T">
             <objects>
-                <viewController id="SgQ-tf-FnW" sceneMemberID="viewController">
+                <viewController id="SgQ-tf-FnW" customClass="ReviewViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAv-x1-IOp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MPh-hP-aeE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="영화 이름을 입력해주세요." id="sGn-Or-KEq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="SgQ-tf-FnW" id="Ckj-f7-P1r"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="3p1-qm-UJO" customClass="SearchTableViewCell" customModule="movieDiary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3p1-qm-UJO" id="8k2-c6-rm8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wj-G4-hyG">
+                                                    <rect key="frame" x="20" y="11" width="374" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="한국 | 범죄, 액션 | 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kv-R0-8zG">
+                                                    <rect key="frame" x="20" y="41" width="374" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Wj-G4-hyG" firstAttribute="top" secondItem="8k2-c6-rm8" secondAttribute="topMargin" id="8lf-mU-odn"/>
+                                                <constraint firstItem="9Wj-G4-hyG" firstAttribute="leading" secondItem="8k2-c6-rm8" secondAttribute="leadingMargin" id="8qb-2q-bJ7"/>
+                                                <constraint firstItem="1kv-R0-8zG" firstAttribute="top" secondItem="9Wj-G4-hyG" secondAttribute="bottom" constant="5" id="Mke-Xe-aRH"/>
+                                                <constraint firstItem="9Wj-G4-hyG" firstAttribute="trailing" secondItem="8k2-c6-rm8" secondAttribute="trailingMargin" id="Ul7-G7-P5T"/>
+                                                <constraint firstItem="1kv-R0-8zG" firstAttribute="bottom" secondItem="8k2-c6-rm8" secondAttribute="bottomMargin" id="j5P-pJ-LdU"/>
+                                                <constraint firstItem="1kv-R0-8zG" firstAttribute="trailing" secondItem="8k2-c6-rm8" secondAttribute="trailingMargin" id="kzf-NU-KmV"/>
+                                                <constraint firstItem="1kv-R0-8zG" firstAttribute="leading" secondItem="8k2-c6-rm8" secondAttribute="leadingMargin" id="qnS-s8-HCM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieInfo" destination="1kv-R0-8zG" id="jVO-2w-TSh"/>
+                                            <outlet property="movieName" destination="9Wj-G4-hyG" id="Lmk-ca-Jrb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SgQ-tf-FnW" id="Bmg-Ko-5fr"/>
+                                    <outlet property="delegate" destination="SgQ-tf-FnW" id="CIX-Qe-MVp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gXB-4I-jLF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="리뷰" image="pencil" catalog="system" selectedImage="pencil" id="XuR-Vd-tSI"/>
+                    <connections>
+                        <outlet property="searchBar" destination="sGn-Or-KEq" id="n6w-0S-ZeA"/>
+                        <outlet property="searchTableView" destination="MPh-hP-aeE" id="4dV-Pw-kZy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94k-y2-wjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="245"/>
+            <point key="canvasLocation" x="960.86956521739137" y="244.41964285714283"/>
         </scene>
         <!--기록-->
         <scene sceneID="ajA-gg-IaF">

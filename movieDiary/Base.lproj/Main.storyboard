@@ -138,7 +138,7 @@
         <!--리뷰-->
         <scene sceneID="tN8-iI-t1T">
             <objects>
-                <viewController id="SgQ-tf-FnW" customClass="ReviewViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SgQ-tf-FnW" customClass="SearchViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAv-x1-IOp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,6 +189,7 @@
                                         <connections>
                                             <outlet property="movieInfo" destination="1kv-R0-8zG" id="jVO-2w-TSh"/>
                                             <outlet property="movieName" destination="9Wj-G4-hyG" id="Lmk-ca-Jrb"/>
+                                            <segue destination="dvV-VU-ceK" kind="presentation" id="jrC-33-Yb3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -210,6 +211,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94k-y2-wjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="244.41964285714283"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="lJ3-ca-oWD">
+            <objects>
+                <viewController id="dvV-VU-ceK" customClass="ReviewViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ab8-Bs-uPS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticket" translatesAutoresizingMaskIntoConstraints="NO" id="G8Z-4Y-oA5">
+                                <rect key="frame" x="20" y="64" width="374" height="758"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-AM-GFo">
+                                <rect key="frame" x="80" y="124" width="254" height="638"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제옥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lad-0f-3S1">
+                                        <rect key="frame" x="0.0" y="20" width="254" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="lad-0f-3S1" firstAttribute="leading" secondItem="y6V-AM-GFo" secondAttribute="leading" id="6fF-4W-vhz"/>
+                                    <constraint firstAttribute="trailing" secondItem="lad-0f-3S1" secondAttribute="trailing" id="a5t-C0-bFp"/>
+                                    <constraint firstItem="lad-0f-3S1" firstAttribute="top" secondItem="y6V-AM-GFo" secondAttribute="top" constant="20" id="yBv-hd-zSm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oeq-fP-CEU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="bottom" secondItem="G8Z-4Y-oA5" secondAttribute="bottom" constant="20" id="7Sy-29-jNQ"/>
+                            <constraint firstItem="G8Z-4Y-oA5" firstAttribute="top" secondItem="Ab8-Bs-uPS" secondAttribute="topMargin" constant="20" id="9Nc-QG-nvh"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="bottom" secondItem="y6V-AM-GFo" secondAttribute="bottom" constant="80" id="NHH-Gy-WTy"/>
+                            <constraint firstItem="G8Z-4Y-oA5" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="WIF-yZ-HrN"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="y6V-AM-GFo" secondAttribute="trailing" constant="80" id="dCG-EE-LwH"/>
+                            <constraint firstItem="y6V-AM-GFo" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="80" id="nSf-mk-HUA"/>
+                            <constraint firstItem="y6V-AM-GFo" firstAttribute="top" secondItem="Oeq-fP-CEU" secondAttribute="top" constant="80" id="ynW-jV-hfy"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="G8Z-4Y-oA5" secondAttribute="trailing" constant="20" id="zgT-Gq-cph"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieNameLabel" destination="lad-0f-3S1" id="Vae-5f-wvj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaW-wa-1yL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718.840579710145" y="243.75"/>
         </scene>
         <!--기록-->
         <scene sceneID="ajA-gg-IaF">
@@ -274,6 +325,7 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="ticket" width="280" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

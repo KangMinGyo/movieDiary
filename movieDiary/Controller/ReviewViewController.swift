@@ -10,16 +10,26 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var reviewTextView: UITextView!
+    
     var movieName : String = ""
+    var movieInfo : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(movieName)
         self.movieNameLabel.text = movieName
     }
     
 
+    @IBAction func saveButton(_ sender: UIButton) {
+        guard let review = reviewTextView.text, review.count > 0 else {
+            print("메모를 입력하세요")
+            return
+        }
+        DataManager.shared.addNewReview(review, movieName, movieInfo)
+    }
+    
     /*
     // MARK: - Navigation
 

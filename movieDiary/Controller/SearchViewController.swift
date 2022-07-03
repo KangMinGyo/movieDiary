@@ -74,9 +74,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let selectdeIndex =
                     self.searchTableView.indexPathForSelectedRow?.row {
                     vc.movieName = movieSearch?.movieListResult.movieList[selectdeIndex].movieNm ?? ""
+                    vc.movieInfo = movieSearch?.movieListResult.movieList[selectdeIndex].movieInfo ?? ""
                 }
+            }
         }
-    }
-
     }
 }

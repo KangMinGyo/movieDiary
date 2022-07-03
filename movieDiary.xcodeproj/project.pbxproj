@@ -20,6 +20,10 @@
 		8CA2910D286D5C6A006E9B5A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2910C286D5C6A006E9B5A /* SearchTableViewCell.swift */; };
 		8CA2910F286D604A006E9B5A /* MovieSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2910E286D604A006E9B5A /* MovieSearch.swift */; };
 		8CA29111286F2BF7006E9B5A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA29110286F2BF7006E9B5A /* ReviewViewController.swift */; };
+		8CA2911428717126006E9B5A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911328717126006E9B5A /* DataManager.swift */; };
+		8CA29117287184FC006E9B5A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA29116287184FC006E9B5A /* RecordViewController.swift */; };
+		8CA2911928718524006E9B5A /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911828718524006E9B5A /* RecordTableViewCell.swift */; };
+		8CA2911B2871AC87006E9B5A /* RecordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		8CA2910C286D5C6A006E9B5A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8CA2910E286D604A006E9B5A /* MovieSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearch.swift; sourceTree = "<group>"; };
 		8CA29110286F2BF7006E9B5A /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		8CA2911328717126006E9B5A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8CA29116287184FC006E9B5A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		8CA2911828718524006E9B5A /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		8CA290EC28699857006E9B5A /* movieDiary */ = {
 			isa = PBXGroup;
 			children = (
+				8CA29112287170FC006E9B5A /* Data */,
 				8CA29107286C7312006E9B5A /* Model */,
 				8CA29106286C7302006E9B5A /* Controller */,
 				8CA290ED28699857006E9B5A /* AppDelegate.swift */,
@@ -86,11 +95,12 @@
 		8CA29106286C7302006E9B5A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8CA29115287184D7006E9B5A /* Cell */,
 				8CA290F128699857006E9B5A /* ViewController.swift */,
-				8CA29104286C2C4B006E9B5A /* HomeTableViewCell.swift */,
 				8CA2910A286D5877006E9B5A /* SearchViewController.swift */,
-				8CA2910C286D5C6A006E9B5A /* SearchTableViewCell.swift */,
 				8CA29110286F2BF7006E9B5A /* ReviewViewController.swift */,
+				8CA29116287184FC006E9B5A /* RecordViewController.swift */,
+				8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,6 +112,24 @@
 				8CA2910E286D604A006E9B5A /* MovieSearch.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8CA29112287170FC006E9B5A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2911328717126006E9B5A /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8CA29115287184D7006E9B5A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2910C286D5C6A006E9B5A /* SearchTableViewCell.swift */,
+				8CA29104286C2C4B006E9B5A /* HomeTableViewCell.swift */,
+				8CA2911828718524006E9B5A /* RecordTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,11 +206,15 @@
 				8CA29109286C733B006E9B5A /* MovieData.swift in Sources */,
 				8CA290F828699857006E9B5A /* movieDiary.xcdatamodeld in Sources */,
 				8CA29111286F2BF7006E9B5A /* ReviewViewController.swift in Sources */,
+				8CA29117287184FC006E9B5A /* RecordViewController.swift in Sources */,
+				8CA2911B2871AC87006E9B5A /* RecordDetailsViewController.swift in Sources */,
+				8CA2911928718524006E9B5A /* RecordTableViewCell.swift in Sources */,
 				8CA2910B286D5877006E9B5A /* SearchViewController.swift in Sources */,
 				8CA29105286C2C4B006E9B5A /* HomeTableViewCell.swift in Sources */,
 				8CA2910F286D604A006E9B5A /* MovieSearch.swift in Sources */,
 				8CA290F228699857006E9B5A /* ViewController.swift in Sources */,
 				8CA2910D286D5C6A006E9B5A /* SearchTableViewCell.swift in Sources */,
+				8CA2911428717126006E9B5A /* DataManager.swift in Sources */,
 				8CA290EE28699857006E9B5A /* AppDelegate.swift in Sources */,
 				8CA290F028699857006E9B5A /* SceneDelegate.swift in Sources */,
 			);

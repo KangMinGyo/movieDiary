@@ -15,6 +15,7 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(movieName)
         self.movieNameLabel.text = movieName
     }
     

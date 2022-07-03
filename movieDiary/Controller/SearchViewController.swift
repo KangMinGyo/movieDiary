@@ -67,17 +67,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        movieName = movieSearch?.movieListResult.movieList[indexPath.row].movieNm ?? ""
-    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ReviewViewController {
-            let vc = segue.destination as? ReviewViewController
-            vc?.movieName = movieName
+        if segue.identifier == "segue" {
+            if let vc = segue.destination as? ReviewViewController {
+                if let selectdeIndex =
+                    self.searchTableView.indexPathForSelectedRow?.row {
+                    vc.movieName = movieSearch?.movieListResult.movieList[selectdeIndex].movieNm ?? ""
+                }
         }
     }
 
-
+    }
 }

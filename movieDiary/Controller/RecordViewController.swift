@@ -33,6 +33,23 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let target = DataManager.shared.movieReviewList[indexPath.row]
+            DataManager.shared.deleteReview(target)
+            
+            DataManager.shared.movieReviewList.remove(at: indexPath.row)
+            RecordTableView.deleteRows(at: [indexPath], with: .fade)
+
+        } else if editingStyle == .insert {
+            
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

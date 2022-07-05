@@ -46,6 +46,13 @@ class DataManager {
         saveContext()
     }
     
+    func deleteReview(_ review: Review?) {
+        if let review = review {
+            mainContenxt.delete(review)
+            saveContext()
+        }
+    }
+    
     
     // MARK: - Core Data stack
 

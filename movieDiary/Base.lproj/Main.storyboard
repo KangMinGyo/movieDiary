@@ -227,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GT4-zD-cLy">
-                                <rect key="frame" x="20" y="142" width="374" height="400"/>
+                                <rect key="frame" x="20" y="231" width="374" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -247,27 +247,77 @@
                                     <action selector="saveButton:" destination="dvV-VU-ceK" eventType="touchUpInside" id="3ga-Kg-Ao0"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OyM-MX-Bz1">
+                                <rect key="frame" x="0.0" y="219" width="414" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-iI-SVq">
+                                <rect key="frame" x="69" y="138" width="276" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F9z-89-HTP">
+                                        <rect key="frame" x="0.0" y="-0.5" width="50.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AHQ-uj-024">
+                                        <rect key="frame" x="56.5" y="-0.5" width="50.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VG4-6k-QSS">
+                                        <rect key="frame" x="113" y="-0.5" width="50" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9O3-f4-Vzr">
+                                        <rect key="frame" x="169" y="-0.5" width="50.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-Ia-vhm">
+                                        <rect key="frame" x="225.5" y="-0.5" width="50.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RZP-Oz-kzP"/>
+                                </constraints>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="jBF-LG-Y8F">
+                                <rect key="frame" x="67" y="148" width="280" height="31"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="moveStarSlider:" destination="dvV-VU-ceK" eventType="valueChanged" id="C6R-cT-DFi"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oeq-fP-CEU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6r7-iI-SVq" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="69" id="16l-Gs-5hh"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="lad-0f-3S1" secondAttribute="trailing" constant="20" id="PUD-35-rFX"/>
                             <constraint firstItem="BWN-Eo-chA" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="Xgv-Ys-vCM"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="jBF-LG-Y8F" secondAttribute="trailing" constant="69" id="ZJN-ge-Ln3"/>
+                            <constraint firstItem="jBF-LG-Y8F" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="69" id="d8S-Vw-FFh"/>
+                            <constraint firstItem="6r7-iI-SVq" firstAttribute="top" secondItem="lad-0f-3S1" secondAttribute="bottom" constant="26" id="fTG-hn-GY6"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="6r7-iI-SVq" secondAttribute="trailing" constant="69" id="gbO-FB-2VF"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="bottom" secondItem="BWN-Eo-chA" secondAttribute="bottom" constant="30" id="nci-6L-qOg"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="top" secondItem="Oeq-fP-CEU" secondAttribute="top" id="pBu-eK-wTc"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="pJl-Uq-gq9"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="BWN-Eo-chA" secondAttribute="trailing" constant="20" id="sW0-kk-gF3"/>
+                            <constraint firstItem="jBF-LG-Y8F" firstAttribute="top" secondItem="lad-0f-3S1" secondAttribute="bottom" constant="36" id="tH6-ih-sbl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XDj-st-TZ1"/>
                     <connections>
                         <outlet property="movieNameLabel" destination="lad-0f-3S1" id="Vae-5f-wvj"/>
                         <outlet property="reviewTextView" destination="GT4-zD-cLy" id="3Mx-gV-sMv"/>
+                        <outlet property="starSlider" destination="jBF-LG-Y8F" id="1NP-BO-Z9d"/>
+                        <outlet property="starStackView" destination="6r7-iI-SVq" id="7mZ-2e-8Mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaW-wa-1yL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628.985507246377" y="243.75"/>
+            <point key="canvasLocation" x="2569.5652173913045" y="204.91071428571428"/>
         </scene>
         <!--기록-->
         <scene sceneID="ajA-gg-IaF">
@@ -458,6 +508,7 @@
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -472,6 +523,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

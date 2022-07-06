@@ -14,6 +14,7 @@ class RecordDetailsViewController: UIViewController {
     
     var movieNm : String = ""
     var movieRv : String = ""
+    var star : Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +22,25 @@ class RecordDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         movieName.text = movieNm
         movieReview.text = movieRv
+        print(star)
+        
+        var value = star
+        
+        for index in 0...5 {
+            if let starImage = view.viewWithTag(index) as? UIImageView {
+                if value > 0.5 {
+                    value -= 1
+                    starImage.image = UIImage(systemName: "star.fill")
+                } else if 0 < value && value < 0.5 {
+                    value -= 0.5
+                    starImage.image = UIImage(systemName: "star.leadinghalf.filled")
+                } else {
+                    starImage.image = UIImage(systemName: "star")
+                }
+        }
     }
+}
     
-
     /*
     // MARK: - Navigation
 

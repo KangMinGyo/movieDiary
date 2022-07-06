@@ -17,6 +17,7 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
     
     var movieName : String = ""
     var movieInfo : String = ""
+    var star : Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
     // MARK: - 별점 시스템
     @IBAction func moveStarSlider(_ sender: UISlider) {
         var value = starSlider.value
+        star = starSlider.value
         print(value)
 
         for index in 0...5 {
@@ -56,7 +58,7 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
         }
         
         //데이터 전달
-        DataManager.shared.addNewReview(review, movieName, movieInfo)
+        DataManager.shared.addNewReview(review, movieName, movieInfo, star)
         self.navigationController?.popViewController(animated: true)
     }
     

@@ -256,27 +256,27 @@
                                     <constraint firstAttribute="height" constant="1" id="Guq-2W-m81"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-iI-SVq">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-iI-SVq">
                                 <rect key="frame" x="69" y="138" width="276" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F9z-89-HTP">
-                                        <rect key="frame" x="0.0" y="-0.5" width="50.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="-0.5" width="51" height="50"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AHQ-uj-024">
-                                        <rect key="frame" x="56.5" y="-0.5" width="50.5" height="50"/>
+                                        <rect key="frame" x="56" y="-0.5" width="51.5" height="50"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VG4-6k-QSS">
-                                        <rect key="frame" x="113" y="-0.5" width="50" height="50"/>
+                                        <rect key="frame" x="112.5" y="-0.5" width="51" height="50"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9O3-f4-Vzr">
-                                        <rect key="frame" x="169" y="-0.5" width="50.5" height="50"/>
+                                        <rect key="frame" x="168.5" y="-0.5" width="51.5" height="50"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-Ia-vhm">
-                                        <rect key="frame" x="225.5" y="-0.5" width="50.5" height="50"/>
+                                        <rect key="frame" x="225" y="-0.5" width="51" height="50"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
                                 </subviews>
@@ -329,7 +329,7 @@
             </objects>
             <point key="canvasLocation" x="2670" y="244"/>
         </scene>
-        <!--기록-->
+        <!--리뷰 목록-->
         <scene sceneID="ajA-gg-IaF">
             <objects>
                 <viewController id="T7H-4v-WLR" customClass="RecordViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -338,7 +338,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-KJ-NYT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" rowHeight="100" id="xMh-cP-erK" customClass="RecordTableViewCell" customModule="movieDiary" customModuleProvider="target">
@@ -403,31 +403,66 @@
                             <constraint firstItem="Zcv-KJ-NYT" firstAttribute="leading" secondItem="BZw-hu-fjy" secondAttribute="leading" id="fuC-RV-EWs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="기록" image="person" catalog="system" selectedImage="person.fill" id="eLk-D6-H8T"/>
+                    <navigationItem key="navigationItem" title="리뷰 목록" id="ebf-pA-gmS"/>
                     <connections>
                         <outlet property="RecordTableView" destination="Zcv-KJ-NYT" id="ovq-K6-9pG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmX-zP-aKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.86956521739137" y="909.375"/>
+            <point key="canvasLocation" x="1871.0144927536232" y="909.375"/>
         </scene>
         <!--Record Details View Controller-->
         <scene sceneID="t66-Yd-Hvq">
             <objects>
-                <viewController id="7E2-0I-l4B" customClass="RecordDetailsViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="7E2-0I-l4B" customClass="RecordDetailsViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Avt-7H-NEy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBL-OK-kC7">
-                                <rect key="frame" x="20" y="49" width="374" height="24"/>
+                                <rect key="frame" x="20" y="93" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fLh-Hc-drp">
+                                <rect key="frame" x="69" y="143" width="276" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-tA-Alu">
+                                        <rect key="frame" x="0.0" y="-0.5" width="51" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CKl-Tx-0xa">
+                                        <rect key="frame" x="56" y="-0.5" width="51.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7ka-Ek-8io">
+                                        <rect key="frame" x="112.5" y="-0.5" width="51" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w1j-kK-C93">
+                                        <rect key="frame" x="168.5" y="-0.5" width="51.5" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LyE-OK-ake">
+                                        <rect key="frame" x="225" y="-0.5" width="51" height="50"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6QQ-MS-wjM"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIY-ed-JhJ">
+                                <rect key="frame" x="0.0" y="223" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="rbz-DG-Gig"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영화를 봤다 재밌었다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akD-mw-dge">
-                                <rect key="frame" x="20" y="73" width="374" height="200"/>
+                                <rect key="frame" x="20" y="232" width="374" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -437,8 +472,14 @@
                         <viewLayoutGuide key="safeArea" id="1J7-AH-NX5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="fLh-Hc-drp" secondAttribute="trailing" constant="69" id="1CU-Gm-lWG"/>
+                            <constraint firstAttribute="trailing" secondItem="lIY-ed-JhJ" secondAttribute="trailing" id="5R7-u5-AfY"/>
+                            <constraint firstItem="lIY-ed-JhJ" firstAttribute="top" secondItem="fLh-Hc-drp" secondAttribute="bottom" constant="30" id="A1r-8K-iBR"/>
+                            <constraint firstItem="lIY-ed-JhJ" firstAttribute="leading" secondItem="Avt-7H-NEy" secondAttribute="leading" id="Iqs-df-xNR"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="DBL-OK-kC7" secondAttribute="trailing" constant="20" id="SMd-zY-gaN"/>
+                            <constraint firstItem="fLh-Hc-drp" firstAttribute="top" secondItem="DBL-OK-kC7" secondAttribute="bottom" constant="26" id="hhR-5d-ZZv"/>
                             <constraint firstItem="DBL-OK-kC7" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="o3U-2G-lUP"/>
+                            <constraint firstItem="fLh-Hc-drp" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="69" id="vwT-pv-ANf"/>
                             <constraint firstItem="DBL-OK-kC7" firstAttribute="top" secondItem="1J7-AH-NX5" secondAttribute="top" constant="5" id="z3d-c3-rbd"/>
                         </constraints>
                     </view>
@@ -450,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OjZ-Ay-qW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1718.840579710145" y="908.70535714285711"/>
+            <point key="canvasLocation" x="2669.5652173913045" y="908.70535714285711"/>
         </scene>
         <!--더보기-->
         <scene sceneID="m7c-QN-V2c">
@@ -466,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-7c-1le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="1552"/>
+            <point key="canvasLocation" x="1871.0144927536232" y="1551.5625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="deH-Fj-x23">
@@ -483,7 +524,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9ik-Pc-uzv"/>
                         <segue destination="a4J-WP-UOI" kind="relationship" relationship="viewControllers" id="muL-Yk-V5m"/>
-                        <segue destination="T7H-4v-WLR" kind="relationship" relationship="viewControllers" id="Ru9-2Z-e6n"/>
+                        <segue destination="afo-6j-PmT" kind="relationship" relationship="viewControllers" id="Ru9-2Z-e6n"/>
                         <segue destination="eFl-7u-6sG" kind="relationship" relationship="viewControllers" id="pp6-bE-ckB"/>
                     </connections>
                 </tabBarController>
@@ -509,6 +550,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gP1-Ak-x3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="244.41964285714283"/>
+        </scene>
+        <!--기록-->
+        <scene sceneID="i1r-Zr-SKJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="afo-6j-PmT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="기록" image="person" catalog="system" selectedImage="person.fill" id="eLk-D6-H8T"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXj-me-0Mw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T7H-4v-WLR" kind="relationship" relationship="rootViewController" id="hSd-LS-eg5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekp-Uu-2Xl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="909.375"/>
         </scene>
     </scenes>
     <resources>

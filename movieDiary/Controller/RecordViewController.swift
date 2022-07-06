@@ -72,6 +72,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.RecordTableView.indexPathForSelectedRow?.row {
                     vc.movieNm = DataManager.shared.movieReviewList[selectdeIndex].title ?? ""
                     vc.movieRv = DataManager.shared.movieReviewList[selectdeIndex].content ?? ""
+                    vc.star = DataManager.shared.movieReviewList[selectdeIndex].star 
                 }
             }
         }

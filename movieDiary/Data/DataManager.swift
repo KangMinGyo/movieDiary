@@ -34,12 +34,13 @@ class DataManager {
         }
     }
     
-    func addNewReview(_ review: String?, _ title: String?, _ info: String?) {
+    func addNewReview(_ review: String?, _ title: String?, _ info: String?, _ star: Float?) {
         let newReview = Review(context: mainContenxt)
         newReview.content = review
         newReview.insertDate = Date()
         newReview.title = title
         newReview.movieInfo = info
+        newReview.star = star ?? 0.0
         
         movieReviewList.insert(newReview, at: 0)
         

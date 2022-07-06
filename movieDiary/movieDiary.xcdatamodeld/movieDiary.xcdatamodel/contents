@@ -4,9 +4,10 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="insertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="movieInfo" optional="YES" attributeType="String"/>
+        <attribute name="star" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Review" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Review" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

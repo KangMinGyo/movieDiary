@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController {
+class ReviewViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var reviewTextView: UITextView!
@@ -21,16 +21,17 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.movieNameLabel.text = movieName
+        
+        reviewTextView.delegate = self
+        reviewTextView.text = "내용을 입력하세요."
+        reviewTextView.textColor = UIColor.lightGray
     }
     
     // MARK: - 별점 시스템
     @IBAction func moveStarSlider(_ sender: UISlider) {
         var value = starSlider.value
         print(value)
-        
-        // star.leadinghalf.filled
-        //starImage.image = UIImage(systemName: "star.fill")
-        
+
         for index in 0...5 {
             if let starImage = view.viewWithTag(index) as? UIImageView {
                 if value > 0.5 {
@@ -53,14 +54,31 @@ class ReviewViewController: UIViewController {
             print("메모를 입력하세요")
             return
         }
+        
+        //데이터 전달
         DataManager.shared.addNewReview(review, movieName, movieInfo)
-        self.presentingViewController?.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if reviewTextView.textColor == UIColor.lightGray {
+            reviewTextView.text = ""
+            reviewTextView.textColor = UIColor.black
+            }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if reviewTextView.text.isEmpty {
+            reviewTextView.text = "내용을 입력해주세요."
+            reviewTextView.textColor = UIColor.lightGray
+            }
     }
 
     // MARK: - 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
 
     /*
     // MARK: - Navigation

@@ -226,10 +226,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GT4-zD-cLy">
-                                <rect key="frame" x="20" y="231" width="374" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GT4-zD-cLy">
+                                <rect key="frame" x="20" y="229" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="pN9-wA-Ixv"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -247,10 +249,12 @@
                                     <action selector="saveButton:" destination="dvV-VU-ceK" eventType="touchUpInside" id="3ga-Kg-Ao0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OyM-MX-Bz1">
-                                <rect key="frame" x="0.0" y="219" width="414" height="4"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyM-MX-Bz1">
+                                <rect key="frame" x="0.0" y="218" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Guq-2W-m81"/>
+                                </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-iI-SVq">
                                 <rect key="frame" x="69" y="138" width="276" height="50"/>
@@ -294,17 +298,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6r7-iI-SVq" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="69" id="16l-Gs-5hh"/>
+                            <constraint firstItem="GT4-zD-cLy" firstAttribute="top" secondItem="OyM-MX-Bz1" secondAttribute="bottom" constant="10" id="BXB-N6-QOv"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="lad-0f-3S1" secondAttribute="trailing" constant="20" id="PUD-35-rFX"/>
                             <constraint firstItem="BWN-Eo-chA" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="Xgv-Ys-vCM"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="jBF-LG-Y8F" secondAttribute="trailing" constant="69" id="ZJN-ge-Ln3"/>
+                            <constraint firstAttribute="trailing" secondItem="OyM-MX-Bz1" secondAttribute="trailing" id="a2a-xM-zsE"/>
                             <constraint firstItem="jBF-LG-Y8F" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="69" id="d8S-Vw-FFh"/>
+                            <constraint firstItem="OyM-MX-Bz1" firstAttribute="leading" secondItem="Ab8-Bs-uPS" secondAttribute="leading" id="eiK-qN-cnN"/>
                             <constraint firstItem="6r7-iI-SVq" firstAttribute="top" secondItem="lad-0f-3S1" secondAttribute="bottom" constant="26" id="fTG-hn-GY6"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="6r7-iI-SVq" secondAttribute="trailing" constant="69" id="gbO-FB-2VF"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="bottom" secondItem="BWN-Eo-chA" secondAttribute="bottom" constant="30" id="nci-6L-qOg"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="top" secondItem="Oeq-fP-CEU" secondAttribute="top" id="pBu-eK-wTc"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="pJl-Uq-gq9"/>
+                            <constraint firstItem="OyM-MX-Bz1" firstAttribute="top" secondItem="6r7-iI-SVq" secondAttribute="bottom" constant="30" id="qWO-Go-Yol"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="BWN-Eo-chA" secondAttribute="trailing" constant="20" id="sW0-kk-gF3"/>
                             <constraint firstItem="jBF-LG-Y8F" firstAttribute="top" secondItem="lad-0f-3S1" secondAttribute="bottom" constant="36" id="tH6-ih-sbl"/>
+                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="GT4-zD-cLy" secondAttribute="trailing" constant="20" id="vX3-q8-Z1q"/>
+                            <constraint firstItem="GT4-zD-cLy" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="vq3-oe-nAg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XDj-st-TZ1"/>
@@ -317,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaW-wa-1yL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569.5652173913045" y="204.91071428571428"/>
+            <point key="canvasLocation" x="2670" y="244"/>
         </scene>
         <!--기록-->
         <scene sceneID="ajA-gg-IaF">

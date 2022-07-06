@@ -17,7 +17,6 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.movieNameLabel.text = movieName
     }
     
@@ -28,8 +27,14 @@ class ReviewViewController: UIViewController {
             return
         }
         DataManager.shared.addNewReview(review, movieName, movieInfo)
+        self.presentingViewController?.dismiss(animated: true)
     }
-    
+
+    //키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
     /*
     // MARK: - Navigation
 

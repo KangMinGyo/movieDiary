@@ -55,6 +55,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         movieSearchURL = movieSearchURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(movieSearchURL)
         self.getData()
+        
+        //검색 완료시 키보드 내리기
+        searchBar.resignFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

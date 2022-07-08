@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=60c9b995596ead85ff6e59a8d3725e72&targetDt="
     
+    let moviePosterArray = ["thor.jpeg", "topgun.jpg", "decision.jpeg", "city.jpg", "witch.jpg"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,12 +64,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //TableView 관련
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
+        cell.moviePoster.image = UIImage(named: moviePosterArray[indexPath.row])
         cell.movieName.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].movieNm
         cell.movieRank.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].rank
         cell.releaseDate.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].openDt

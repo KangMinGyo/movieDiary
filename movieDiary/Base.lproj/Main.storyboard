@@ -496,18 +496,79 @@
         <!--더보기-->
         <scene sceneID="m7c-QN-V2c">
             <objects>
-                <viewController id="eFl-7u-6sG" sceneMemberID="viewController">
+                <viewController id="eFl-7u-6sG" customClass="MoreViewController" customModule="movieDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ACa-jx-dfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 버전 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u8-h4-q6G">
+                                <rect key="frame" x="20" y="80" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rM3-V8-DYe">
+                                <rect key="frame" x="0.0" y="64" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Egx-gW-zvb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-gv-OnV">
+                                <rect key="frame" x="0.0" y="116" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ToC-zQ-N1O"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdI-ax-NGz">
+                                <rect key="frame" x="20" y="132" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAI-nB-pjT">
+                                <rect key="frame" x="0.0" y="168" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="cPf-Pg-H4K"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-Yh-H8Z">
+                                <rect key="frame" x="20" y="125" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="askButton:" destination="eFl-7u-6sG" eventType="touchUpInside" id="dg1-54-IGw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3Xh-Wr-rQA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Xh-Wr-rQA" firstAttribute="trailing" secondItem="3u8-h4-q6G" secondAttribute="trailing" constant="20" id="2Zf-md-YAq"/>
+                            <constraint firstItem="YAI-nB-pjT" firstAttribute="leading" secondItem="3Xh-Wr-rQA" secondAttribute="leading" id="68C-u7-s03"/>
+                            <constraint firstItem="3u8-h4-q6G" firstAttribute="top" secondItem="rM3-V8-DYe" secondAttribute="bottom" constant="15" id="6jF-OD-k63"/>
+                            <constraint firstItem="3Xh-Wr-rQA" firstAttribute="trailing" secondItem="CdI-ax-NGz" secondAttribute="trailing" constant="20" id="9h2-4r-7i2"/>
+                            <constraint firstItem="YAI-nB-pjT" firstAttribute="top" secondItem="CdI-ax-NGz" secondAttribute="bottom" constant="15" id="BIp-zD-54Z"/>
+                            <constraint firstAttribute="trailing" secondItem="I2E-gv-OnV" secondAttribute="trailing" id="FwL-qX-Esf"/>
+                            <constraint firstItem="rM3-V8-DYe" firstAttribute="top" secondItem="3Xh-Wr-rQA" secondAttribute="top" constant="20" id="Nm0-Uw-iDt"/>
+                            <constraint firstItem="YAI-nB-pjT" firstAttribute="trailing" secondItem="3Xh-Wr-rQA" secondAttribute="trailing" id="NwZ-j7-xjO"/>
+                            <constraint firstItem="rM3-V8-DYe" firstAttribute="leading" secondItem="ACa-jx-dfS" secondAttribute="leading" id="Uzf-Ql-a90"/>
+                            <constraint firstAttribute="trailing" secondItem="rM3-V8-DYe" secondAttribute="trailing" id="VbB-4A-eJh"/>
+                            <constraint firstItem="3u8-h4-q6G" firstAttribute="leading" secondItem="3Xh-Wr-rQA" secondAttribute="leading" constant="20" id="WQY-Nm-LTQ"/>
+                            <constraint firstItem="I2E-gv-OnV" firstAttribute="leading" secondItem="ACa-jx-dfS" secondAttribute="leading" id="WQv-0v-FPF"/>
+                            <constraint firstItem="CdI-ax-NGz" firstAttribute="leading" secondItem="3Xh-Wr-rQA" secondAttribute="leading" constant="20" id="foi-xa-Pde"/>
+                            <constraint firstItem="CdI-ax-NGz" firstAttribute="top" secondItem="I2E-gv-OnV" secondAttribute="bottom" constant="15" id="wDN-n6-1OA"/>
+                            <constraint firstItem="I2E-gv-OnV" firstAttribute="top" secondItem="3u8-h4-q6G" secondAttribute="bottom" constant="15" id="yso-fw-yYf"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="더보기" image="option" selectedImage="option" id="8Om-iL-dWT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-7c-1le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.0144927536232" y="1551.5625"/>
+            <point key="canvasLocation" x="1724.6376811594205" y="1618.5267857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="deH-Fj-x23">

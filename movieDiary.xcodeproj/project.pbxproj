@@ -24,6 +24,7 @@
 		8CA29117287184FC006E9B5A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA29116287184FC006E9B5A /* RecordViewController.swift */; };
 		8CA2911928718524006E9B5A /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911828718524006E9B5A /* RecordTableViewCell.swift */; };
 		8CA2911B2871AC87006E9B5A /* RecordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */; };
+		8CA2911D28799334006E9B5A /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911C28799333006E9B5A /* MoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8CA29116287184FC006E9B5A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		8CA2911828718524006E9B5A /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
+		8CA2911C28799333006E9B5A /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				8CA29110286F2BF7006E9B5A /* ReviewViewController.swift */,
 				8CA29116287184FC006E9B5A /* RecordViewController.swift */,
 				8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */,
+				8CA2911C28799333006E9B5A /* MoreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA2911D28799334006E9B5A /* MoreViewController.swift in Sources */,
 				8CA29109286C733B006E9B5A /* MovieData.swift in Sources */,
 				8CA290F828699857006E9B5A /* movieDiary.xcdatamodeld in Sources */,
 				8CA29111286F2BF7006E9B5A /* ReviewViewController.swift in Sources */,

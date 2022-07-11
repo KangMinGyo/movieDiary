@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import Cosmos
 
 class ReviewViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var reviewTextView: UITextView!
     
-    @IBOutlet weak var starSlider: UISlider!
-    @IBOutlet weak var starStackView: UIStackView!
+    @IBOutlet weak var cosmosView: CosmosView!
     
     var movieName : String = ""
     var movieInfo : String = ""
@@ -26,28 +26,33 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
         reviewTextView.delegate = self
         reviewTextView.text = "내용을 입력하세요."
         reviewTextView.textColor = UIColor.lightGray
-    }
-    
-    // MARK: - 별점 시스템
-    @IBAction func moveStarSlider(_ sender: UISlider) {
-        var value = starSlider.value
-        star = starSlider.value
-        print(value)
-
-        for index in 0...5 {
-            if let starImage = view.viewWithTag(index) as? UIImageView {
-                if value > 0.5 {
-                    value -= 1
-                    starImage.image = UIImage(systemName: "star.fill")
-                } else if 0 < value && value < 0.5 {
-                    value -= 0.5
-                    starImage.image = UIImage(systemName: "star.leadinghalf.filled")
-                } else {
-                    starImage.image = UIImage(systemName: "star")
-                }
+        
+        cosmosView.didFinishTouchingCosmos = { rating in
+            self.cosmosView.text = String(Int(Float(rating) + Float(rating)))
+            self.star = Float(rating)
         }
     }
-}
+    
+//    // MARK: - 별점 시스템
+//    @IBAction func moveStarSlider(_ sender: UISlider) {
+//        var value = starSlider.value
+//        star = starSlider.value
+//        print(value)
+//
+//        for index in 0...5 {
+//            if let starImage = view.viewWithTag(index) as? UIImageView {
+//                if value > 0.5 {
+//                    value -= 1
+//                    starImage.image = UIImage(systemName: "star.fill")
+//                } else if 0 < value && value < 0.5 {
+//                    value -= 0.5
+//                    starImage.image = UIImage(systemName: "star.leadinghalf.filled")
+//                } else {
+//                    starImage.image = UIImage(systemName: "star")
+//                }
+//        }
+//    }
+//}
     
     // MARK: - 메모 입력
 

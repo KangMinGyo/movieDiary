@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Cosmos
 
 class RecordDetailsViewController: UIViewController {
 
     @IBOutlet weak var movieName: UILabel!
-    @IBOutlet weak var movieReview: UILabel!
+    @IBOutlet weak var movieReview: UITextView!
+    
+    @IBOutlet weak var cosmosView: CosmosView!
     
     var movieNm : String = ""
     var movieRv : String = ""
@@ -24,21 +27,8 @@ class RecordDetailsViewController: UIViewController {
         movieReview.text = movieRv
         print(star)
         
-        var value = star
-        
-        for index in 0...5 {
-            if let starImage = view.viewWithTag(index) as? UIImageView {
-                if value > 0.5 {
-                    value -= 1
-                    starImage.image = UIImage(systemName: "star.fill")
-                } else if 0 < value && value < 0.5 {
-                    value -= 0.5
-                    starImage.image = UIImage(systemName: "star.leadinghalf.filled")
-                } else {
-                    starImage.image = UIImage(systemName: "star")
-                }
-        }
-    }
+        cosmosView.rating = Double(star)
+
 }
     
     /*

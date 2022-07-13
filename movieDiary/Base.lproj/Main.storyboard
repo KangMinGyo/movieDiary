@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Ze-ZX-Q6D">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -210,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94k-y2-wjd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.0144927536232" y="244.41964285714283"/>
+            <point key="canvasLocation" x="1787" y="244"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="lJ3-ca-oWD">
@@ -236,19 +237,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWN-Eo-chA">
-                                <rect key="frame" x="20" y="792" width="374" height="40"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0jY-DR-Yxi"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="완료"/>
-                                <connections>
-                                    <action selector="saveButton:" destination="dvV-VU-ceK" eventType="touchUpInside" id="3ga-Kg-Ao0"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyM-MX-Bz1">
                                 <rect key="frame" x="0.0" y="212" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -298,16 +286,19 @@
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="lad-0f-3S1" secondAttribute="trailing" constant="20" id="PUD-35-rFX"/>
                             <constraint firstItem="GT4-zD-cLy" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="RDR-U5-x9i"/>
                             <constraint firstItem="lt1-Ce-KOG" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="69" id="V6L-4S-izc"/>
-                            <constraint firstItem="BWN-Eo-chA" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="Xgv-Ys-vCM"/>
-                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="bottom" secondItem="BWN-Eo-chA" secondAttribute="bottom" constant="30" id="nci-6L-qOg"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="top" secondItem="Oeq-fP-CEU" secondAttribute="top" id="pBu-eK-wTc"/>
                             <constraint firstItem="lad-0f-3S1" firstAttribute="leading" secondItem="Oeq-fP-CEU" secondAttribute="leading" constant="20" id="pJl-Uq-gq9"/>
                             <constraint firstItem="GT4-zD-cLy" firstAttribute="top" secondItem="OyM-MX-Bz1" secondAttribute="bottom" constant="20" id="rKe-mL-7xr"/>
-                            <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="BWN-Eo-chA" secondAttribute="trailing" constant="20" id="sW0-kk-gF3"/>
                             <constraint firstItem="Oeq-fP-CEU" firstAttribute="trailing" secondItem="lt1-Ce-KOG" secondAttribute="trailing" constant="69" id="ylI-WT-Vqz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XDj-st-TZ1"/>
+                    <navigationItem key="navigationItem" id="XDj-st-TZ1">
+                        <barButtonItem key="rightBarButtonItem" title="등록" id="gDp-BH-Kqp">
+                            <connections>
+                                <action selector="saveButton:" destination="dvV-VU-ceK" id="Nnn-Eq-6EO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cosmosView" destination="lt1-Ce-KOG" id="elv-sw-7wy"/>
                         <outlet property="movieNameLabel" destination="lad-0f-3S1" id="Vae-5f-wvj"/>
@@ -316,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaW-wa-1yL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669.5652173913045" y="243.75"/>
+            <point key="canvasLocation" x="2558" y="244"/>
         </scene>
         <!--리뷰 목록-->
         <scene sceneID="ajA-gg-IaF">
@@ -399,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmX-zP-aKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871.0144927536232" y="909.375"/>
+            <point key="canvasLocation" x="1787" y="909"/>
         </scene>
         <!--Record Details View Controller-->
         <scene sceneID="t66-Yd-Hvq">
@@ -486,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OjZ-Ay-qW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669.5652173913045" y="908.70535714285711"/>
+            <point key="canvasLocation" x="2558" y="909"/>
         </scene>
         <!--더보기-->
         <scene sceneID="m7c-QN-V2c">
@@ -532,6 +523,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-Yh-H8Z">
                                 <rect key="frame" x="20" y="125" width="374" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -563,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izn-7c-1le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1724.6376811594205" y="1618.5267857142856"/>
+            <point key="canvasLocation" x="1787" y="1598"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="deH-Fj-x23">
@@ -600,7 +593,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SgQ-tf-FnW" kind="relationship" relationship="rootViewController" id="N17-UO-9nf"/>
+                        <segue destination="SgQ-tf-FnW" kind="relationship" relationship="rootViewController" id="A9B-P5-O4B"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gP1-Ak-x3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

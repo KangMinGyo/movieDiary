@@ -56,16 +56,15 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - 메모 입력
 
-    @IBAction func saveButton(_ sender: UIButton) {
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
         guard let review = reviewTextView.text, review.count > 0 else {
             print("메모를 입력하세요")
             return
         }
-        
-        //데이터 전달
-        DataManager.shared.addNewReview(review, movieName, movieInfo, star)
-        self.navigationController?.popViewController(animated: true)
-    }
+            //데이터 전달
+            DataManager.shared.addNewReview(review, movieName, movieInfo, star)
+            self.navigationController?.popViewController(animated: true)
+}
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if reviewTextView.textColor == UIColor.lightGray {

@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "witch.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "best.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

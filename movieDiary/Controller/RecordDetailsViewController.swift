@@ -12,12 +12,14 @@ class RecordDetailsViewController: UIViewController {
 
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieReview: UITextView!
+    @IBOutlet weak var evalImageView: UIImageView!
     
     @IBOutlet weak var cosmosView: CosmosView!
     
     var movieNm : String = ""
     var movieRv : String = ""
     var star : Float = 0.0
+    var eval : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +27,23 @@ class RecordDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         movieName.text = movieNm
         movieReview.text = movieRv
-        print(star)
-        
         cosmosView.rating = Double(star)
+        
+        evalImage()
 
 }
+    func evalImage() {
+        if eval == "인생영화" {
+            evalImageView.image = UIImage(named: "best.png")
+        } else if eval == "꿀잼영화" {
+            evalImageView.image = UIImage(named: "good.png")
+        } else if eval == "그럭저럭" {
+            evalImageView.image = UIImage(named: "notbad.png")
+        } else {
+            evalImageView.image = UIImage(named: "bad.png")
+        }
+                    
+    }
     
     /*
     // MARK: - Navigation

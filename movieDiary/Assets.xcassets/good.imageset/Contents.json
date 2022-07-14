@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "topgun.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "good.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

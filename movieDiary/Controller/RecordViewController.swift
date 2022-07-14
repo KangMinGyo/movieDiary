@@ -18,6 +18,7 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }()
     
     @IBOutlet weak var RecordTableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.shared.movieReviewList.count
@@ -55,14 +56,25 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         DataManager.shared.fetchReview()
         RecordTableView.reloadData()
+        
+        if DataManager.shared.movieReviewList.count == 0 {
+            emptyView.isHidden = false
+        } else {
+            emptyView.isHidden = true
+        }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if DataManager.shared.movieReviewList.count == 0 {
+            emptyView.isHidden = false
+        } else {
+            emptyView.isHidden = true
+        }
 
-        // Do any additional setup after loading the view.
     }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,7 +84,8 @@ class RecordViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     self.RecordTableView.indexPathForSelectedRow?.row {
                     vc.movieNm = DataManager.shared.movieReviewList[selectdeIndex].title ?? ""
                     vc.movieRv = DataManager.shared.movieReviewList[selectdeIndex].content ?? ""
-                    vc.star = DataManager.shared.movieReviewList[selectdeIndex].star 
+                    vc.star = DataManager.shared.movieReviewList[selectdeIndex].star
+                    vc.eval = DataManager.shared.movieReviewList[selectdeIndex].eval ?? ""
                 }
             }
         }

@@ -76,10 +76,12 @@ class ReviewViewController: UIViewController, UITextViewDelegate {
             }
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
-        }
+        } else {
             //데이터 전달
             DataManager.shared.addNewReview(review, movieName, movieInfo, star, eval)
         self.navigationController?.popToRootViewController(animated: true)
+    }
+            
 }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

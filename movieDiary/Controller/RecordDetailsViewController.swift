@@ -34,13 +34,13 @@ class RecordDetailsViewController: UIViewController {
 }
     func evalImage() {
         if eval == "인생영화" {
-            evalImageView.image = UIImage(named: "best.png")
+            evalImageView.image = UIImage(named: "eval_best.png")
         } else if eval == "꿀잼영화" {
-            evalImageView.image = UIImage(named: "good.png")
+            evalImageView.image = UIImage(named: "eval_good.png")
         } else if eval == "그럭저럭" {
-            evalImageView.image = UIImage(named: "notbad.png")
+            evalImageView.image = UIImage(named: "eval_notbad.png")
         } else {
-            evalImageView.image = UIImage(named: "bad.png")
+            evalImageView.image = UIImage(named: "eval_bad.png")
         }
                     
     }

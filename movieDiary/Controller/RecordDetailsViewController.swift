@@ -31,7 +31,8 @@ class RecordDetailsViewController: UIViewController {
         
         evalImage()
 
-}
+    }
+
     func evalImage() {
         if eval == "인생영화" {
             evalImageView.image = UIImage(named: "eval_best.png")
@@ -42,7 +43,7 @@ class RecordDetailsViewController: UIViewController {
         } else {
             evalImageView.image = UIImage(named: "eval_bad.png")
         }
-                    
+
     }
     
     /*

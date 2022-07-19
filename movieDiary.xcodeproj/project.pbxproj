@@ -26,6 +26,7 @@
 		8CA2911B2871AC87006E9B5A /* RecordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */; };
 		8CA2911D28799334006E9B5A /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2911C28799333006E9B5A /* MoreViewController.swift */; };
 		8CA291422884314E006E9B5A /* MoviePosterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA291412884314E006E9B5A /* MoviePosterData.swift */; };
+		8CA291442885D90B006E9B5A /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA291432885D90A006E9B5A /* CustomImageView.swift */; };
 		B6D58E6DC3828C3BF92974E3 /* Pods_movieDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D8A6F3554D901311D98866 /* Pods_movieDiary.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8CA2911A2871AC87006E9B5A /* RecordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailsViewController.swift; sourceTree = "<group>"; };
 		8CA2911C28799333006E9B5A /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		8CA291412884314E006E9B5A /* MoviePosterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterData.swift; sourceTree = "<group>"; };
+		8CA291432885D90A006E9B5A /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				8CA29115287184D7006E9B5A /* Cell */,
 				8CA290F128699857006E9B5A /* ViewController.swift */,
+				8CA291432885D90A006E9B5A /* CustomImageView.swift */,
 				8CA2910A286D5877006E9B5A /* SearchViewController.swift */,
 				8CA29110286F2BF7006E9B5A /* ReviewViewController.swift */,
 				8CA29116287184FC006E9B5A /* RecordViewController.swift */,
@@ -292,6 +295,7 @@
 				8CA2910D286D5C6A006E9B5A /* SearchTableViewCell.swift in Sources */,
 				8CA2911428717126006E9B5A /* DataManager.swift in Sources */,
 				8CA290EE28699857006E9B5A /* AppDelegate.swift in Sources */,
+				8CA291442885D90B006E9B5A /* CustomImageView.swift in Sources */,
 				8CA290F028699857006E9B5A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

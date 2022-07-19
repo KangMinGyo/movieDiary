@@ -9,7 +9,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var moviePoster: UIImageView!
+    @IBOutlet weak var moviePoster: CustomImageView!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var movieRank: UILabel!

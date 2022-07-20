@@ -133,6 +133,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return posterURL
     }
     
+    //    func resize(newWidth: CGFloat) -> UIImage {
+    //            let scale = newWidth / self.size.width
+    //            let newHeight = self.size.height * scale
+    //
+    //            let size = CGSize(width: newWidth, height: newHeight)
+    //            let render = UIGraphicsImageRenderer(size: size)
+    //            let renderImage = render.image { context in
+    //                self.draw(in: CGRect(origin: .zero, size: size))
+    //            }
+    //
+    //            print("화면 배율: \(UIScreen.main.scale)")// 배수
+    //            print("origin: \(self), resize: \(renderImage)")
+    //            return renderImage
+    //        }
+    
     //TableView 관련
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.movieData?.boxOfficeResult.dailyBoxOfficeList.count ?? 5
@@ -177,12 +192,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            urlArray.append(imageURL ?? "")
             
 //            print("urlArray:\(urlArray)")
-            let secondsToDelay = 2.0
+            let secondsToDelay = 1.0
             DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                 if let index: IndexPath = tableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
-                        cell.moviePoster.image = UIImage(url: URL(string: self.urlArray[indexPath.row]))
+                        let img = UIImage(url: URL(string: self.urlArray[indexPath.row]))
+                        let targetSize = CGSize(width: 100, height: 100)
+                        let scaledImage = img?.scalePreservingAspectRatio(targetSize: targetSize)
+                        cell.moviePoster.image = scaledImage
+                        print("imagesize \(scaledImage?.size)")
                 }
+                    
             }
         }
         return cell
@@ -200,21 +220,33 @@ extension UIImage {
       return nil
     }
   }
-    func resize(newWidth: CGFloat) -> UIImage {
-            let scale = newWidth / self.size.width
-            let newHeight = self.size.height * scale
+    func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
+            // Determine the scale factor that preserves aspect ratio
+            let widthRatio = targetSize.width / size.width
+            let heightRatio = targetSize.height / size.height
+            
+            let scaleFactor = min(widthRatio, heightRatio)
+            
+            // Compute the new image size that preserves aspect ratio
+            let scaledImageSize = CGSize(
+                width: size.width * scaleFactor,
+                height: size.height * scaleFactor
+            )
 
-            let size = CGSize(width: newWidth, height: newHeight)
-            let render = UIGraphicsImageRenderer(size: size)
-            let renderImage = render.image { context in
-                self.draw(in: CGRect(origin: .zero, size: size))
+            // Draw and return the resized UIImage
+            let renderer = UIGraphicsImageRenderer(
+                size: scaledImageSize
+            )
+
+            let scaledImage = renderer.image { _ in
+                self.draw(in: CGRect(
+                    origin: .zero,
+                    size: scaledImageSize
+                ))
             }
             
-            print("화면 배율: \(UIScreen.main.scale)")// 배수
-            print("origin: \(self), resize: \(renderImage)")
-            return renderImage
+            return scaledImage
         }
-    
 }
 //
 //postrtURL 탑건 https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%ED%83%91%EA%B1%B4:%20%EB%A7%A4%EB%B2%84%EB%A6%AD

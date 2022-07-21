@@ -618,23 +618,42 @@
                                     <constraint firstAttribute="width" constant="200" id="czg-Ps-n86"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEc-dk-ehe">
+                                <rect key="frame" x="20" y="132" width="374" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="SuY-ya-GYA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2M-ai-Luc">
+                                <rect key="frame" x="20" y="279" width="374" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8uM-8P-boB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1J7-AH-NX5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="fbT-Er-6XP" secondAttribute="trailing" constant="69" id="1KD-wY-Znh"/>
+                            <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="i2M-ai-Luc" secondAttribute="trailing" constant="20" id="2ry-78-CEu"/>
                             <constraint firstItem="SAe-fX-XEt" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="5tA-hr-12Z"/>
                             <constraint firstItem="A3a-aT-nS7" firstAttribute="top" secondItem="lIY-ed-JhJ" secondAttribute="bottom" constant="20" id="60O-2c-atT"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="mL6-Hp-cxm" secondAttribute="trailing" constant="107" id="7nh-hS-zb0"/>
                             <constraint firstItem="tsY-Vo-wyn" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="92r-hn-MiN"/>
+                            <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="FEc-dk-ehe" secondAttribute="trailing" constant="20" id="FKl-VD-CCt"/>
+                            <constraint firstItem="i2M-ai-Luc" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="JiY-ho-wdF"/>
                             <constraint firstItem="lny-Qk-IZT" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="KOU-c1-dFr"/>
                             <constraint firstItem="mL6-Hp-cxm" firstAttribute="top" secondItem="tsY-Vo-wyn" secondAttribute="bottom" constant="20" id="LkL-8y-GdC"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="lny-Qk-IZT" secondAttribute="trailing" constant="20" id="Ne1-si-xEK"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="DBL-OK-kC7" secondAttribute="trailing" constant="20" id="SMd-zY-gaN"/>
+                            <constraint firstItem="FEc-dk-ehe" firstAttribute="top" secondItem="DBL-OK-kC7" secondAttribute="bottom" constant="15" id="WN6-86-pCP"/>
                             <constraint firstItem="lIY-ed-JhJ" firstAttribute="top" secondItem="fbT-Er-6XP" secondAttribute="bottom" constant="30" id="ZPs-LP-h10"/>
                             <constraint firstItem="A3a-aT-nS7" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="bDA-gs-ldY"/>
                             <constraint firstItem="SAe-fX-XEt" firstAttribute="top" secondItem="lny-Qk-IZT" secondAttribute="bottom" constant="20" id="bHB-tv-ez9"/>
                             <constraint firstItem="mL6-Hp-cxm" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="107" id="cYh-vQ-NE3"/>
+                            <constraint firstItem="i2M-ai-Luc" firstAttribute="top" secondItem="A3a-aT-nS7" secondAttribute="bottom" constant="20" id="dhu-xZ-VEE"/>
                             <constraint firstItem="lIY-ed-JhJ" firstAttribute="leading" secondItem="Avt-7H-NEy" secondAttribute="leading" id="eij-Zh-Z1e"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="tsY-Vo-wyn" secondAttribute="trailing" constant="20" id="f4l-wT-Im2"/>
                             <constraint firstItem="lny-Qk-IZT" firstAttribute="top" secondItem="A3a-aT-nS7" secondAttribute="bottom" constant="20" id="gbl-0S-Ale"/>
@@ -643,6 +662,7 @@
                             <constraint firstItem="tsY-Vo-wyn" firstAttribute="top" secondItem="SAe-fX-XEt" secondAttribute="bottom" constant="20" id="lDY-BT-SNb"/>
                             <constraint firstItem="DBL-OK-kC7" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="o3U-2G-lUP"/>
                             <constraint firstItem="1J7-AH-NX5" firstAttribute="trailing" secondItem="A3a-aT-nS7" secondAttribute="trailing" constant="20" id="pfQ-sE-Ujb"/>
+                            <constraint firstItem="FEc-dk-ehe" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="20" id="pid-xy-BoR"/>
                             <constraint firstAttribute="trailing" secondItem="lIY-ed-JhJ" secondAttribute="trailing" id="qh7-cM-E0n"/>
                             <constraint firstItem="fbT-Er-6XP" firstAttribute="leading" secondItem="1J7-AH-NX5" secondAttribute="leading" constant="69" id="rKw-FS-70h"/>
                             <constraint firstItem="DBL-OK-kC7" firstAttribute="top" secondItem="1J7-AH-NX5" secondAttribute="top" constant="5" id="z3d-c3-rbd"/>
@@ -658,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OjZ-Ay-qW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149" y="909"/>
+            <point key="canvasLocation" x="2147.826086956522" y="908.70535714285711"/>
         </scene>
         <!--더보기-->
         <scene sceneID="m7c-QN-V2c">

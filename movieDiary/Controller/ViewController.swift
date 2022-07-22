@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Movie Poster JSON 데이터 가져오기
     func getPosterURLData(_ url: String) {
         guard let url = URL(string: url) else { return }
-        //print("url\(url)") 여기까진 됨
+//        print("url\(url)")
         let task = session.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error!)
@@ -96,15 +96,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let decoder = JSONDecoder()
                 do {
                     let decodedData = try decoder.decode(MoviePosterData.self, from: JSONdata) //여기서 문제네
-//                    print("decodedData \(decodedData)")
                     self.moviePosterData = decodedData
-//
-//                    print("moviePosterData\(self.moviePosterData)")
                     
-                    if let backPosterURL = self.moviePosterData?.results[0].poster_path {
-                        var lastURL = self.getPosterImageURL(backPosterURL)
+                    let check = self.moviePosterData?.results.isEmpty
+                    if check == false {
+                        print("kjsj: \(self.moviePosterData?.results[0].poster_path)")
+                        let backPosterURL = self.moviePosterData?.results[0].poster_path
+                        let lastURL = self.getPosterImageURL(backPosterURL!)
                         self.urlArray.append(lastURL)
                     } else {
+                        print("없지롱")
                         self.urlArray.append("")
                     }
                     print("urlArray\(self.urlArray)")
@@ -132,21 +133,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        print(posterURL)
         return posterURL
     }
-    
-    //    func resize(newWidth: CGFloat) -> UIImage {
-    //            let scale = newWidth / self.size.width
-    //            let newHeight = self.size.height * scale
-    //
-    //            let size = CGSize(width: newWidth, height: newHeight)
-    //            let render = UIGraphicsImageRenderer(size: size)
-    //            let renderImage = render.image { context in
-    //                self.draw(in: CGRect(origin: .zero, size: size))
-    //            }
-    //
-    //            print("화면 배율: \(UIScreen.main.scale)")// 배수
-    //            print("origin: \(self), resize: \(renderImage)")
-    //            return renderImage
-    //        }
     
     //TableView 관련
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -192,7 +178,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            urlArray.append(imageURL ?? "")
             
 //            print("urlArray:\(urlArray)")
-            let secondsToDelay = 1.0
+        
+            let secondsToDelay = 5.0
             DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                 if let index: IndexPath = tableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
@@ -202,7 +189,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         cell.moviePoster.image = scaledImage
                         print("imagesize \(scaledImage?.size)")
                 }
-                    
+
             }
         }
         return cell

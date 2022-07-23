@@ -144,7 +144,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         let boxofficeInfo = self.movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row]
-        cell.moviePoster.image = nil
+        cell.moviePoster.image = UIImage(named: "loading.png")
+        cell.moviePoster.contentMode = .center
         
         cell.movieName.text = boxofficeInfo?.movieNm
         cell.movieRank.text = boxofficeInfo?.rank
@@ -179,7 +180,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
 //            print("urlArray:\(urlArray)")
         
-            let secondsToDelay = 5.0
+            let secondsToDelay = 2.0
             DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                 if let index: IndexPath = tableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
@@ -187,6 +188,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let targetSize = CGSize(width: 100, height: 100)
                         let scaledImage = img?.scalePreservingAspectRatio(targetSize: targetSize)
                         cell.moviePoster.image = scaledImage
+                        cell.moviePoster.contentMode = .scaleAspectFit
                         print("imagesize \(scaledImage?.size)")
                 }
 

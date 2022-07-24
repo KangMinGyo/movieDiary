@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -180,16 +181,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
 //            print("urlArray:\(urlArray)")
         
-            let secondsToDelay = 2.0
+            let secondsToDelay = 1.0
             DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                 if let index: IndexPath = tableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
-                        let img = UIImage(url: URL(string: self.urlArray[indexPath.row]))
-                        let targetSize = CGSize(width: 100, height: 100)
-                        let scaledImage = img?.scalePreservingAspectRatio(targetSize: targetSize)
-                        cell.moviePoster.image = scaledImage
+                        let imgUrl = URL(string: self.urlArray[indexPath.row])
+//                        let img = UIImage(url: URL(string: self.urlArray[indexPath.row]))
+//                        let targetSize = CGSize(width: 100, height: 100)
+//                        let scaledImage = img?.scalePreservingAspectRatio(targetSize: targetSize)
+                        cell.moviePoster.kf.setImage(with: imgUrl)
                         cell.moviePoster.contentMode = .scaleAspectFit
-                        print("imagesize \(scaledImage?.size)")
                 }
 
             }

@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         movieURL += yesterdayDate()
         self.getData()
     }
@@ -57,7 +57,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let decoder = JSONDecoder()
                     do {
                         let decodedData = try decoder.decode(MovieData.self, from: JSONdata)
-                        //print(decodedData)
                         self.movieData = decodedData
                         
                         for i in 0..<10 {
@@ -66,9 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         for item in self.movieNameArray {
                             var posterURL = ""
-//                            print(item)
                             posterURL = self.FindMoviePosterURL(item)
-                            //print("posterURL\(posterURL)")
                             self.getPosterURLData(posterURL)
                             
                         }
@@ -131,13 +128,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func getPosterImageURL(_ posterDataURL: String) -> String {
         var posterURL = "https://image.tmdb.org/t/p/original"
         posterURL += String(posterDataURL)
-//        print(posterURL)
         return posterURL
     }
     
     //TableView 관련
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.movieData?.boxOfficeResult.dailyBoxOfficeList.count ?? 5
         return 10
     }
     
@@ -147,48 +142,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let boxofficeInfo = self.movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row]
         cell.moviePoster.image = UIImage(named: "loading.png")
         cell.moviePoster.contentMode = .center
-        
         cell.movieName.text = boxofficeInfo?.movieNm
         cell.movieRank.text = boxofficeInfo?.rank
         cell.releaseDate.text = boxofficeInfo?.openDt
         cell.audiNum.text = boxofficeInfo?.audiAcc
         
-//
-//        var posterURLData: String?
-//        let imageURL: String?
-//
-//        DispatchQueue.global().async {
-//            if let movieTitle = boxofficeInfo?.movieNm {
-//                posterURLData = self.FindMoviePosterURL(movieTitle)
-//            } else {
-//                posterURLData = self.FindMoviePosterURL("")
-//            }
-//
-//            print(posterURLData)
-//
-//            if let url = posterURLData {
-//                print("존재함?")
-//                self.getPosterURLData(url)
-//            } else {
-//                print("tlqkf")
-//            }
-//            print("posterURLdata")
-//        }
-//
-//        if let url = urlArray[indexPath.row] {
-//            imageURL = getPosterImageURL(url)
-//            urlArray.append(imageURL ?? "")
-            
-//            print("urlArray:\(urlArray)")
-        
-            let secondsToDelay = 1.0
+            let secondsToDelay = 2.4
             DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDelay) {
                 if let index: IndexPath = tableView.indexPath(for: cell) {
                     if index.row == indexPath.row {
                         let imgUrl = URL(string: self.urlArray[indexPath.row])
-//                        let img = UIImage(url: URL(string: self.urlArray[indexPath.row]))
-//                        let targetSize = CGSize(width: 100, height: 100)
-//                        let scaledImage = img?.scalePreservingAspectRatio(targetSize: targetSize)
                         cell.moviePoster.kf.setImage(with: imgUrl)
                         cell.moviePoster.contentMode = .scaleAspectFit
                 }
@@ -238,23 +201,3 @@ extension UIImage {
             return scaledImage
         }
 }
-//
-//postrtURL 탑건 https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%ED%83%91%EA%B1%B4:%20%EB%A7%A4%EB%B2%84%EB%A6%AD
-//postrtURL 토르
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%ED%86%A0%EB%A5%B4:%20%EB%9F%AC%EB%B8%8C%20%EC%95%A4%20%EC%8D%AC%EB%8D%94
-//postrtURL 해결
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%ED%97%A4%EC%96%B4%EC%A7%88%20%EA%B2%B0%EC%8B%AC
-//postrtURL 코난
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EB%AA%85%ED%83%90%EC%A0%95%20%EC%BD%94%EB%82%9C:%20%ED%95%A0%EB%A1%9C%EC%9C%88%EC%9D%98%20%EC%8B%A0%EB%B6%80
-//postrtURL 앨비스
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EC%97%98%EB%B9%84%EC%8A%A4
-//postrtURL 범죄도시
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C%202
-//postrtURL
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EB%8D%94%20%ED%82%AC%EB%9F%AC:%20%EC%A3%BD%EC%96%B4%EB%8F%84%20%EB%90%98%EB%8A%94%20%EC%95%84%EC%9D%B4
-//postrtURL
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EB%92%A4%ED%8B%80%EB%A6%B0%20%EC%A7%91
-//postrtURL
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%EA%B7%B8%EB%A0%88%EC%9D%B4%20%EB%A7%A8
-//postrtURL
-//https://api.themoviedb.org/3/search/movie?api_key=ab318418ee513b352deb4c9ab21f7ed7&language=ko&page=1&include_adult=false&region=KR&query=%ED%95%9C%EC%82%B0:%20%EC%9A%A9%EC%9D%98%20%EC%B6%9C%ED%98%84
